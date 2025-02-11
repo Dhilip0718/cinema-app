@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
 
 import { Movie, MovieService } from '../../services/movie.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search-bar',
-  imports: [FormsModule, BrowserModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
   standalone: true,
+  providers: [MovieService],
+
 })
 export class SearchBarComponent {
   searchTerm: string = '';

@@ -1,1 +1,7 @@
-<p>featured works!</p>
+<h2>Featured Movies</h2>
+<div *ngFor="let movie of featuredMovies">
+  <h3>{{ movie.Title }} ({{ movie.Year }})</h3>
+  <img [src]="movie.Poster" alt="Movie Poster">
+  <p>Awards: {{ movie.Awards }}</p>
+  <p>{{ movie.Plot }}</p>
+</div>

@@ -8,10 +8,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./featured.component.scss'],
   imports: [CommonModule],
   standalone: true,
+  providers: [MovieService]
+
 })
 export class FeaturedComponent implements OnInit {
   featuredMovies: Movie[] = [];
-  movieIds = ['tt3682448', 'tt0050212']; // Example movie IDs
+  movieIds = ['tt1285016', 'tt0050212'];
 
   constructor(private movieService: MovieService) {}
 
@@ -21,8 +23,12 @@ export class FeaturedComponent implements OnInit {
 
   loadFeaturedMovies() {
     this.movieService.getFeaturedMovies(this.movieIds).subscribe(
-      (movies) => (this.featuredMovies = movies),
-      (error) => console.error('Error loading featured movies:', error) // Handle errors!
+      
+      (movies) =>  { 
+        console.log('Featured movies:', movies);
+        return (this.featuredMovies = movies) },
+      
+      (error) => console.error('Error loading featured movies:', error)
     );
   }
 }

@@ -46,7 +46,6 @@ export class MovieService {
   }
 
   getFeaturedMovies(ids: string[], plot: string = 'full'): Observable<Movie[]> {
-    // Use forkJoin to make concurrent requests and return an Observable<Movie[]>
     const movieObservables = ids.map((id) => this.getMovieById(id, plot));
     return forkJoin(movieObservables);
   }
