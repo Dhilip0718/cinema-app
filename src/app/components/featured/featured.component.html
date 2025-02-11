@@ -3,22 +3,14 @@
 <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
 <div *ngIf="!loading && !error && featuredMovies.length >= 2" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button *ngFor="let movie of featuredMovies; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img [src]="featuredMovies[0].Poster" class="d-block w-100" alt="First Movie Poster">
+    <div *ngFor="let movie of featuredMovies; let i = index" class="carousel-item" [class.active]="i === 0">
+      <img [src]="movie.Poster" class="d-block w-100" [alt]="movie.Title + ' Poster'">
       <div class="carousel-caption d-none d-md-block">
-        <h5>{{ featuredMovies[0].Title }} ({{ featuredMovies[0].Year }})</h5>
-        <p>{{ featuredMovies[0].Plot }}</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img [src]="featuredMovies[1].Poster" class="d-block w-100" alt="Second Movie Poster">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ featuredMovies[1].Title }} ({{ featuredMovies[1].Year }})</h5>
-        <p>{{ featuredMovies[1].Plot }}</p>
+        <h5>{{ movie.Title }} ({{ movie.Year }})</h5>
+        <p>{{ movie.Plot }}</p>
       </div>
     </div>
   </div>
