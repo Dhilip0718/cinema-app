@@ -1,7 +1,4 @@
-<h2>Featured Movies</h2>
-<div *ngIf="loading" class="text-center">Loading featured movies...</div>
-<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
-<div class="carousel-container">
+<!-- <div class="carousel-container">
   <div
     *ngIf="!loading && !error && featuredMovies.length >= 2"
     id="carouselExampleIndicators"
@@ -30,10 +27,6 @@
           class="d-block w-100"
           [alt]="movie.Title + ' Poster'"
         />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{ movie.Title }} ({{ movie.Year }})</h5>
-          <p>{{ movie.Plot }}</p>
-        </div>
       </div>
     </div>
     <button
@@ -54,5 +47,10 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  </div>
+</div> -->
+<div class="movie-list-container">
+  <div *ngFor="let movie of featuredMovies">
+    <app-movie-card [movie]="movie"></app-movie-card>
   </div>
 </div>

@@ -6,6 +6,7 @@ import { FeaturedComponent } from './components/featured/featured.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   imports: [

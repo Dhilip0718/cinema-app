@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieService, Movie } from '../../services/movie.service';
+import { MovieCardComponent } from '../movie-card/movie-card.component';
 
 @Component({
   selector: 'app-featured',
   templateUrl: './featured.component.html',
   styleUrls: ['./featured.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MovieCardComponent],
   providers: [MovieService]
 })
 export class FeaturedComponent implements OnInit {
   featuredMovies: Movie[] = [];
-  movieIds = ['tt1285016', 'tt0050212'];
+  movieIds = ['tt1285016', 'tt0050212', 'tt0327056','tt0105265'];
   loading = true; // Add loading state
   error: string | null = null; // Add error state
 

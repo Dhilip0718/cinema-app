@@ -3,8 +3,9 @@
   <div class="card-body">
     <h2 class="card-title">{{ movie.Title }}</h2>
     <div class="card-details">
-      <p>{{ movie.Year }}</p>
-      <p>{{ movie.Type }}</p>
+      <p>Movie release year - {{ movie.Year }}</p>
+      <p>Movie genere - {{ movie.Type }}</p>
+      <p *ngIf="movie.Plot">Movie Plot - {{ limitText(movie.Plot) }}</p>
     </div>
   </div>
 </div>
