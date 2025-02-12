@@ -30,16 +30,15 @@ export class SearchBarComponent {
         .searchMovies(this.searchTerm, this.plotLength)
         .subscribe(
           (movies) => {
-            this.movies = movies.slice(0, 5); // Limit to top 5
+            this.movies = movies.slice(0, 5); 
           },
           (error) => {
             console.error('Error fetching movies:', error);
-            // Handle error, e.g., display a message to the user
-            this.movies = []; // Clear previous results
+            this.movies = [];
           }
         );
     } else {
-      this.movies = []; // Clear results if search term is empty
+      this.movies = []; 
     }
   }
   clearSearch() {

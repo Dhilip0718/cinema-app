@@ -28,7 +28,7 @@ interface SearchResult {
   providedIn: 'root',
 })
 export class MovieService {
-  private apiKey = '6c3a2d45'; // Your API key
+  private apiKey = '6c3a2d45';
   private apiUrl = 'http://www.omdbapi.com/';
 
   constructor(private http: HttpClient) {}
@@ -36,7 +36,7 @@ export class MovieService {
   searchMovies(title: string, plot: string = 'full'): Observable<Movie[]> {
     const url = `${this.apiUrl}?s=${title}&apikey=${this.apiKey}&plot=${plot}`;
     return this.http.get<SearchResult>(url).pipe(
-      map((response) => response.Search || []) // Handle potential undefined Search
+      map((response) => response.Search || [])
     );
   }
 

@@ -14,8 +14,8 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 export class FeaturedComponent implements OnInit {
   featuredMovies: Movie[] = [];
   movieIds = ['tt1285016', 'tt0050212', 'tt0327056','tt0105265'];
-  loading = true; // Add loading state
-  error: string | null = null; // Add error state
+  loading = true;
+  error: string | null = null;
 
   constructor(private movieService: MovieService) {}
 
@@ -27,12 +27,12 @@ export class FeaturedComponent implements OnInit {
     this.movieService.getFeaturedMovies(this.movieIds).subscribe(
       (movies) => {
         this.featuredMovies = movies;
-        this.loading = false; // Set loading to false when movies are loaded
-        console.log(this.featuredMovies); // Add this line to verify the movies array
+        this.loading = false;
+        console.log(this.featuredMovies);
       },
       (error) => {
         this.error = 'Failed to load featured movies';
-        this.loading = false; // Set loading to false in case of error
+        this.loading = false;
       }
     );
   }

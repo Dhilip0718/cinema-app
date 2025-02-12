@@ -53,4 +53,5 @@
   <div *ngFor="let movie of featuredMovies">
     <app-movie-card [movie]="movie"></app-movie-card>
   </div>
+  <p> {{ featuredMovies | json }}</p>
 </div>

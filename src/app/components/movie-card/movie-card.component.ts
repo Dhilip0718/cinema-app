@@ -14,7 +14,6 @@ export class MovieCardComponent {
  @Input() movie!: Movie
 
   public limitText(summary: string) {
-    console.log(summary, 'the summary is');
     return summary?.length > 100 ? summary.substr(0, 190) + ' ...' : summary;
   }
 }
