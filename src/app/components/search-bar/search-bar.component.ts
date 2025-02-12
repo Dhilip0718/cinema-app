@@ -8,7 +8,7 @@ import { MovieCardComponent } from "../movie-card/movie-card.component";
 
 @Component({
   selector: 'app-search-bar',
-  imports: [FormsModule, CommonModule, MovieCardComponent],
+  imports: [FormsModule, CommonModule, MovieCardComponent,],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
   standalone: true,

@@ -1,5 +1,59 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/global';
+
 .movie-list-container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.search-container {
+    width: 100%;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg,
+            rgba(131, 58, 180, 1) 0%,
+            rgba(253, 29, 29, 1) 50%,
+            rgba(252, 176, 69, 1) 100%);
+    color: $white;
+    padding: 2rem;
+
+    .input-wrapper {
+        text-align: center;
+
+        input {
+            width: 50%;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            outline: none;
+            border: 0;
+        }
+
+        button {
+            font-size: 2rem;
+            background-color: transparent;
+            border: none;
+            padding: 2px;
+            margin-left: -2.5rem;
+            bottom: -5px;
+            position: relative;
+        }
+    }
+
+    .search-results {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: wrap;
+
+    }
+
+    h2 {
+        padding-top: 2rem;
+    }
+
+    .shows-container {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+    }
 }

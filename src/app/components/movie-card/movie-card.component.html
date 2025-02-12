@@ -1,7 +1,10 @@
 <div class="card">
-  <img [src]="imageUrl" alt="" class="card-image" />
+  <img [src]="movie.Poster" alt="" class="card-image" />
   <div class="card-body">
-    <h2 class="card-title">{{ cardHeader }}</h2>
-    <p class="card-description">{{ limitText(cardDescription) }}</p>
+    <h2 class="card-title">{{ movie.Title }}</h2>
+    <div class="card-details">
+      <p>{{ movie.Year }}</p>
+      <p>{{ movie.Type }}</p>
+    </div>
   </div>
 </div>

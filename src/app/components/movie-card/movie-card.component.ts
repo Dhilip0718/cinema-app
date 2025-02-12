@@ -1,18 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Movie } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-card',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './movie-card.component.html',
-  styleUrl: './movie-card.component.scss'
+  styleUrl: './movie-card.component.scss',
+  standalone: true,
 })
 export class MovieCardComponent {
-
-  @Input() cardHeader!: string;
-  @Input() imageUrl!: string;
-  @Input() cardDescription!: string;
-
-  public limitText(summary: string) {
-    return summary?.length > 100 ? summary.substr(0, 190) + ' ...' : summary
-  }
+ @Input() movie!: Movie
 }
