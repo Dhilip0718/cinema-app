@@ -10,12 +10,10 @@
   
   
     <div *ngFor="let movie of movies">
-      <img [src]="movie.Poster" alt="Movie Poster">
-      <h3>{{ movie.Title }} ({{ movie.Year }})</h3>
-      <p>Type: {{ movie.Type }}</p>
-      <p>Rated: {{ movie.Rated }}</p>
-      <p>Genre: {{ movie.Genre.split(',').join(', ') }}</p>  <p>Director: {{ movie.Director }}</p>
-      <p *ngIf="movie.Plot">{{ movie.Plot.substring(200) }}</p>
-      <p>Awards: {{ movie.Awards }}</p>
+      <app-movie-card
+        [cardHeader]="movie.Title"
+        [cardDescription]="movie.Plot"
+        [imageUrl]="movie.Poster"
+        ></app-movie-card>
     </div>
   </div>

@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { Movie, MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
+import { MovieCardComponent } from "../movie-card/movie-card.component";
 
 @Component({
   selector: 'app-search-bar',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MovieCardComponent],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
   standalone: true,

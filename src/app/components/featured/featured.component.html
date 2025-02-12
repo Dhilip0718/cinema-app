@@ -1,25 +1,58 @@
 <h2>Featured Movies</h2>
 <div *ngIf="loading" class="text-center">Loading featured movies...</div>
 <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
-<div *ngIf="!loading && !error && featuredMovies.length >= 2" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button *ngFor="let movie of featuredMovies; let i = index" type="button" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)"></button>
-  </div>
-  <div class="carousel-inner">
-    <div *ngFor="let movie of featuredMovies; let i = index" class="carousel-item" [class.active]="i === 0">
-      <img [src]="movie.Poster" class="d-block w-100" [alt]="movie.Title + ' Poster'">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ movie.Title }} ({{ movie.Year }})</h5>
-        <p>{{ movie.Plot }}</p>
+<div class="carousel-container">
+  <div
+    *ngIf="!loading && !error && featuredMovies.length >= 2"
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        *ngFor="let movie of featuredMovies; let i = index"
+        type="button"
+        [attr.data-bs-target]="'#carouselExampleIndicators'"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div
+        *ngFor="let movie of featuredMovies; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <img
+          [src]="movie.Poster"
+          class="d-block w-100"
+          [alt]="movie.Title + ' Poster'"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ movie.Title }} ({{ movie.Year }})</h5>
+          <p>{{ movie.Plot }}</p>
+        </div>
       </div>
     </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
