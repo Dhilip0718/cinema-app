@@ -1,19 +1,28 @@
 <div>
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Search for a movie">
-    <button (click)="searchMovies()">Search</button>
-  
-    <label for="plotLength">Plot Length:</label>
-    <select id="plotLength" [(ngModel)]="plotLength" (change)="togglePlotLength()">
-      <option value="full">Full</option>
-      <option value="short">Short</option>
-    </select>
-  
-  
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search for a movie"
+  />
+  <button (click)="searchMovies()">Search</button>
+
+  <label for="plotLength">Plot Length:</label>
+  <select
+    id="plotLength"
+    [(ngModel)]="plotLength"
+    (change)="togglePlotLength()"
+  >
+    <option value="full">Full</option>
+    <option value="short">Short</option>
+  </select>
+
+  <div class="movie-list-container">
     <div *ngFor="let movie of movies">
       <app-movie-card
         [cardHeader]="movie.Title"
         [cardDescription]="movie.Plot"
         [imageUrl]="movie.Poster"
-        ></app-movie-card>
+      ></app-movie-card>
     </div>
   </div>
+</div>
