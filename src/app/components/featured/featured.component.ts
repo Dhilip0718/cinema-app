@@ -13,7 +13,7 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 })
 export class FeaturedComponent implements OnInit {
   featuredMovies: Movie[] = [];
-  movieIds = ['tt1285016', 'tt0050212', 'tt0327056','tt0105265'];
+  movieIds = ['tt1285016', 'tt0118688', 'tt0327056','tt0060345','tt0108778', 'tt3722118'];
   loading = true;
   error: string | null = null;
 
