@@ -18,12 +18,14 @@
             rgba(252, 176, 69, 1) 100%);
     color: $white;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
 
     .input-wrapper {
         text-align: center;
 
         input {
-            width: 50%;
+            min-width: 70vw;
             font-size: 1.5rem;
             padding: 0.5rem;
             border-radius: 8px;
@@ -42,6 +44,9 @@
         }
     }
 
+    .plot-selection {
+        padding: 8px;
+    }
     .search-results {
         display: flex;
         overflow-x: auto;

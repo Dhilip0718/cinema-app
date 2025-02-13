@@ -20,6 +20,12 @@
       </svg>
     </button>
   </div>
+  <div class="plot-selection">
+    <select class="form-select" id="plot" [(ngModel)]="plotLength">
+      <option value="full">Full</option>
+      <option value="short">Short</option>
+    </select>
+  </div>
 </div>
 
 <div class="movie-list-container">
@@ -30,4 +36,3 @@
 <ng-container *ngIf="movies.length === 0">
   <app-featured></app-featured>
 </ng-container>
-

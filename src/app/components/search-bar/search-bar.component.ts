@@ -26,7 +26,7 @@ export class SearchBarComponent {
   constructor(private movieService: MovieService) {}
 
   searchMovies() {
-    if (this.searchTerm.trim() !== '') {
+    if (this.searchTerm.trim() !== '' || this.plotLength) {
       this.movieService
         .searchMovies(this.searchTerm, this.plotLength)
         .subscribe(
