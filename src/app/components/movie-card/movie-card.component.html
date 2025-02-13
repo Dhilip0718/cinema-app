@@ -5,7 +5,12 @@
     <div class="card-details">
       <p>Released {{ movie.Year }}</p>
       <p>Type - {{ movie.Type }}</p>
-      <p *ngIf="movie.Plot">{{ limitText(movie.Plot) }}</p>
+      <p *ngIf="movie.Plot">
+        {{ movie.Plot | summary: showFullPlot }}
+        <a href="#" (click)="togglePlot($event)">
+          {{ showFullPlot ? "Read less" : "Read more" }}
+        </a>
+      </p>
     </div>
   </div>
 </div>
