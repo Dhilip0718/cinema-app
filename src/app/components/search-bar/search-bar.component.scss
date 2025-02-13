@@ -20,12 +20,15 @@
     padding: 2rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     .input-wrapper {
         text-align: center;
+        flex: 1 1 70%;
+        width: 100%;
 
         input {
-            min-width: 70vw;
+            width: 70vw;
             font-size: 1.5rem;
             padding: 0.5rem;
             border-radius: 8px;
@@ -42,9 +45,15 @@
             bottom: -5px;
             position: relative;
         }
+
+        svg {
+            margin-top: -8px;
+        }
     }
 
     .plot-selection {
+        flex: 0 0 auto;
+        width: auto;
         padding: 8px;
     }
     .search-results {
