@@ -1,0 +1,40 @@
+<div class="details-container">
+  <div
+    class="details"
+    *ngIf="movieDetails"
+    [style.background-image]="'url(' + movieDetails.Poster + ')'"
+  >
+    <div class="wrapper">
+      <button type="button" class="btn btn-primary mr-4" (click)="goBack()">
+        <i class="bi bi-arrow-left"></i>Back to overview
+      </button>
+      <h1>
+        {{ movieDetails.Title }}
+      </h1>
+      <div>
+        <h5>Director:</h5>
+        {{ movieDetails.Director}}
+      </div>
+      <div>
+        <h5>Rating:</h5>
+        {{ movieDetails.Rated }}
+      </div>
+      <div>
+        <h5>Awards:</h5>
+        {{ movieDetails.Awards }}
+      </div>
+      <div>
+        <h5>Actors:</h5>
+        {{ movieDetails.Actors }}
+      </div>
+      <div>
+        <h5>Genre:</h5>
+        {{ movieDetails.Genre }}
+      </div>
+      <div [innerHTML]="movieDetails.Plot"></div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading-indicator">
+    <p>Loading...</p>
+  </div>
+</div>

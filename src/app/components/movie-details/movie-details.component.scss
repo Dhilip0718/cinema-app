@@ -1,0 +1,48 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/global';
+
+.details-container {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    color: #222;
+  
+    .details {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+  
+      .wrapper {
+        background-color: $white;
+        opacity: 0.8;
+        width: 80%;
+        padding: 2rem;
+        margin-top: 2rem;
+  
+        h1 {
+          font-size: 2em;
+          margin-bottom: 10px;
+          text-decoration: underline;
+        }
+  
+        img {
+          max-width: 100%;
+          height: auto;
+          margin-top: 10px;
+        }
+  
+        div {
+          margin-bottom: 10px;
+  
+          h5 {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }

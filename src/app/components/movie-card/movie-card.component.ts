@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Movie } from '../../services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -11,9 +12,16 @@ import { Movie } from '../../services/movie.service';
   standalone: true,
 })
 export class MovieCardComponent {
+
  @Input() movie!: Movie
+
+ constructor(private router: Router) { }
 
   public limitText(summary: string) {
     return summary?.length > 100 ? summary.substr(0, 190) + ' ...' : summary;
   }
+
+  public openMovieDetails(movieId: string) {
+    this.router.navigate(['/movie', movieId]);
+    }
 }
