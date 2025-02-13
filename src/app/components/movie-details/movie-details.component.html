@@ -13,7 +13,7 @@
       </h1>
       <div>
         <h5>Director:</h5>
-        {{ movieDetails.Director}}
+        {{ movieDetails.Director }}
       </div>
       <div>
         <h5>Rating:</h5>
@@ -25,11 +25,15 @@
       </div>
       <div>
         <h5>Actors:</h5>
-        {{ movieDetails.Actors }}
+        <ul>
+          <li *ngFor="let actor of actors">{{ actor }}</li>
+        </ul>
       </div>
       <div>
         <h5>Genre:</h5>
-        {{ movieDetails.Genre }}
+        <ul>
+          <li *ngFor="let genere of genres">{{ genere }}</li>
+        </ul>
       </div>
       <div [innerHTML]="movieDetails.Plot"></div>
     </div>
