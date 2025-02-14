@@ -22,6 +22,7 @@ export class MovieCardComponent {
 
   public togglePlot(event: Event): void {
     event.preventDefault();
+    event.stopPropagation();
     this.showFullPlot = !this.showFullPlot;
   }
 
